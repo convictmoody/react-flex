@@ -1,6 +1,6 @@
 {
   "name": "flexbox",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Made with create-react-library",
   "author": "",
   "license": "MIT",
@@ -12,7 +12,7 @@
     "node": ">=10"
   },
   "scripts": {
-    "build": "microbundle-crl --no-compress --format modern,cjs && copyfiles --flat src/index.d.ts dist",
+    "build": "microbundle-crl --no-compress --format modern,cjs && copyfiles -f src/index.d.ts dist && copyfiles -f src/Flexbox.d.ts dist",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "prepare": "run-s build",
     "test": "run-s test:unit test:lint test:build",
@@ -49,7 +49,8 @@
     "prettier": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.1"
+    "react-scripts": "^3.4.1",
+    "copyfiles": "^2.4.0"
   },
   "files": [
     "dist"
