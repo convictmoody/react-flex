@@ -88,18 +88,11 @@ export type FlexType = {
   noShrink?: boolean,
   overflow?: 'hidden' | 'scroll-y',
   noRelative?: boolean,
-  loading?: boolean,
   childrenSpace?: number
 }
 
-const FlexBox = ({ loading, error, children, ...props }: FlexType) => {
-  return (
-    <>
-      <Flex {...props} loading={loading || error}>
-        {children}
-      </Flex>
-    </>
-  )
+const FlexBox = ({ children, ...props }: FlexType) => {
+  return <Flex {...props}>{children}</Flex>
 }
 
 /**
@@ -141,7 +134,6 @@ FlexBox.defaultProps = {
   preventSelection: false,
   wrap: null,
   noRelative: false,
-  loading: false,
   childrenSpace: null
 }
 
