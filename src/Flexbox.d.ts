@@ -63,6 +63,53 @@ var flexDirection = {
 
 exports.flexDirection = flexDirection;
 
+interface FlexType {
+  align?: flexProps,
+  justify?: flexProps,
+  basis?: BASIS_MAP,
+  direction?: 'row' | 'column' | 'row-responsive',
+  f?: number,
+  pad?: EdgeType,
+  margin?: EdgeType,
+  full?:
+    | boolean
+    | 'horizontal'
+    | 'vertical'
+    | 'both'
+    | {
+        vertical: boolean,
+        horizontal: boolean
+      },
+  pointer?: boolean,
+  width?: number | string,
+  height?: number | string,
+  maxWidth?: number | string,
+  secondary?: boolean,
+  floating?: boolean,
+  mobileWidth?: string | number,
+  mobileHeight?: string | number,
+  mobileHidden?: boolean,
+  desktopHidden?: boolean,
+  visible?: boolean,
+  withShadow?: boolean,
+  backgroundColor?: string,
+  onTop?: boolean,
+  preventSelection?: boolean,
+  wrap?: boolean,
+  separator?: {
+    left?: boolean,
+    right?: boolean,
+    top?: boolean,
+    bottom?: boolean
+  },
+  noShrink?: boolean,
+  overflow?: 'hidden' | 'scroll-y',
+  noRelative?: boolean,
+  childrenSpace?: number
+}
+
+class Flexbox extends React.Component<FlexType, {}> {}
+
 FlexBox.defaultProps = {
   align: flexProps.stretch,
   justify: flexProps.stretch,
@@ -95,7 +142,7 @@ FlexBox.defaultProps = {
   childrenSpace: null
 }
 
-class Flexbox extends React.Component<FlexType, {}> {}
+
 
 var _default = FlexBox;
 exports["default"] = _default;
